@@ -1,0 +1,373 @@
+
+
+@keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+}
+@keyframes appearText{
+  from{
+    opacity: 0;
+    filter: hue-rotate(360deg);
+    left: -25px;
+  }to{
+    opacity: 1;
+    left: 0px;
+    filter: hue-rotate(20deg);
+  }
+}
+@keyframes inputAnimation{
+  from{
+    border-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }to{
+    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+}
+@keyframes infiniteInput{
+  0%{
+    border-color: white;
+    border-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }50%{
+    border-radius: 5px;
+   border-color: #f2b3ff;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }100%{
+    border-color: white;
+    border-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+@keyframes cardCheck{
+  0%{
+    opacity: 1;
+    margin-left: 0;
+  }
+  99%{
+    opacity: 0;
+    margin-left: 25px;
+  }
+  100%{
+    opacity: 0;
+    margin-left: 25px;
+  }
+}
+@keyframes backgroundNormal{
+  from{
+    background: linear-gradient(to bottom, #81a6e0 0%, #cc7bc5 100%);
+  }to{
+    background: #81a6e0;
+  }
+}
+@keyframes backgroundSpecial{
+  from{
+    background: linear-gradient(to bottom, #81a6e0 0%, #cc7bc5 100%);
+  }to{
+    background: #cc7bc5;
+  }
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Fjalla One', sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, #81a6e0 0%, #cc7bc5 100%);
+}
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+svg {
+  opacity: 0.1;
+  z-index: 1;
+}
+svg * {
+  stroke: inherit;
+  opacity: 0.1;
+  z-index: 1;
+  transform: inherit;
+  transform-origin: inherit;
+  animation-delay: inherit;
+  stroke: #ffffff;
+}
+svg {
+  width: 80px;
+  height: 60px;
+  margin: 10px;
+  opacity: 0.1;
+  position: fixed;
+}
+svg.star {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+}
+.stars-wrapper {
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+#app {
+    z-index: 100;
+    height: 100%;
+
+}
+#index{
+  height: 100%;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+html{
+  height: 100%;
+}
+
+#name {
+  width: fit-content;
+  color: rgb(255, 240, 255);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 120px; 
+  margin: 0 auto;
+  text-shadow: .03em .03em 0 rgb(255, 179, 245);
+  animation: appearText 0.85s forwards;
+
+}
+#name:after {
+    content: attr(data-shadow);
+    position: absolute;
+    top: .06em; left: .06em;
+    z-index: -1;
+    text-shadow: none;
+    background-image:
+      linear-gradient(
+        45deg,
+        transparent 45%,
+        rgb(156, 158, 255) 45%,
+        rgb(255, 183, 225) 55%,
+        transparent 0
+        );
+    background-size: .05em .05em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shad-anim 15s linear infinite;
+}
+#me1{
+  position: absolute;
+  right: 0; 
+  bottom: 0;
+  width: 55%;
+  height: 70%;
+  opacity: 0.35;
+}
+#title{
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  margin: 0;
+  font-weight: 600;
+  margin-top: 25px;
+  animation: appearText 0.85s forwards;
+}
+#index{
+  input{
+    animation: appearText 0.85s forwards;
+    margin-top: 5px;
+    padding: 5px 15px;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    background-color: transparent;
+    width: 150px;
+    border: 6px solid white;
+    border-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: white;
+  }
+  input:focus{
+    outline: none;
+    animation: inputAnimation 0.5s forwards;
+  }
+  button{
+    animation: appearText 0.85s forwards;
+    top: 35px;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding: 5px 15px;
+    background-color: #81A6E0; 
+    border-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-weight: 800;
+    border:  none;
+    cursor: pointer;
+  }
+  button:focus{
+    outline: none;
+  }
+}
+#card{
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  margin-bottom: 25px;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 5%;
+  h1{
+     margin: 0 auto;
+     opacity: 0;
+  }
+  p{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    width: fit-content;
+    white-space: normal;
+    max-width: 70%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 0 auto;
+    font-size: 26px;
+    animation-delay: 1s;
+    margin-bottom: 15px;
+    opacity: 0;
+    border-radius: 15px;
+    animation: appearText 0.85s forwards;
+  }
+  a{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+    font-weight: 800;
+    animation-delay:12s;
+    opacity: 0;
+    animation: appearText 0.85s forwards;
+  }
+
+}
+
+.loadingInput{
+  animation: infiniteInput 1s linear infinite;
+}
+.cardCheck{
+  animation: cardCheck 1s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes shad-anim {
+  0% {background-position: 0 0}
+  0% {background-position: 100% -100%}
+}
+
+
+@function multiple-box-shadow ($n) {
+  $value: "#{random(2000)}px #{random(2000)}px #FFF";
+  @for $i from 2 through $n {
+    $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF";
+  }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+$pink: #BF85CB;
+$purple: #81A6E0;
+
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStar 50s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 100s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+}
+
+@media screen and (max-width: 900px){
+  #me1{
+    width: 100%;
+    display: none;
+  }
+}
+@media screen and (max-width: 650px){
+  #name{
+    font-size: 100px;
+  }
+}
+@media screen and (max-width: 375px){
+  #name{
+    font-size: 50px;
+  }
+}
+
